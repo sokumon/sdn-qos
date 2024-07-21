@@ -1,0 +1,4 @@
+in_port=4,actions=normal
+in_port=1,actions=output:4
+in_port=2,actions=output:4
+in_port=3,actions=output:4

@@ -1,0 +1,7 @@
+QoS type: linux-netem
+QoS type: linux-fq_codel
+QoS type: linux-codel
+QoS type: linux-hfsc
+QoS type: linux-noop
+QoS type: linux-sfq
+QoS type: linux-htb
