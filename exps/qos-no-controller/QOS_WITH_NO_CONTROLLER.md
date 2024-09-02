@@ -17,8 +17,12 @@ For s2
 ```
 sh ovs-ofctl add-flows s2 flows_s2.txt
 ```
-- Add queue
+- Add queue with max-rate to throltle rate 
 ```
 sh ovs-vsctl set port s1-eth4 qos=@newqos -- --id=@newqos create Qos type=linux-htb queues:123=@q0 queues:234=@q1 queues:345=@q2 -- --id=@q0 create Queue other-config:priority=1 other-config:max-rate=50000000 -- --id=@q1 create Queue other-config:priority=2 other-config:max-rate=25000000 -- --id=@q2 create Queue other-config:priority=3 other-config:max-rate=25000000
 ```
 
+- Add queue with only priority
+```
+sh ovs-vsctl set port s1-eth4 qos=@newqos -- --id=@newqos create Qos type=linux-htb queues:123=@q0 queues:234=@q1 queues:345=@q2 -- --id=@q0 create Queue other-config:priority=1 -- --id=@q1 create Queue other-config:priority=2 -- --id=@q2 create Queue other-config:priority=3
+````
