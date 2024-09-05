@@ -1,0 +1,19 @@
+name: "Testing"
+totalTime: 100
+transfer:
+  - src: "h1"
+    dest: "h4"
+    delay: 1
+    src_cmd: "iperf3 -c 10.0.0.4 -t 50 -J > h1.json"
+    dest_cmd: "iperf3 -s &"
+  - src: "h2"
+    dest: "h5"
+    delay: 5
+    src_cmd: "iperf3 -c 10.0.0.5 -t 50 -J > h2.json"
+    dest_cmd: "iperf3 -s &"
+  - src: "h3"
+    dest: "h6"
+    delay: 10
+    src_cmd: "iperf3 -c 10.0.0.6 -t 50 -J > h3.json"
+    dest_cmd: "iperf3 -s &"
+
